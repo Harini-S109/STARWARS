@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 8</title>
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        .container{
+            background-image: url("images/star-wars-plzcoaffexgf4h81.jpg");
+            height: 100vh;
+            background-size: cover;
+            padding-top: 5rem;
+        }
+        .card{
+            padding: 4rem 3rem;
+            margin: 8rem auto;
+            width: 20%;
+            min-height: 15rem;
+            max-height: 20rem;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 3rem;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.8);
+            overflow-y: scroll;
+        }
+        ::-webkit-scrollbar{
+            display: none;
+        }
+        h2{color: white;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            overflow-x: hidden;
+        }
+        #btn{
+            padding: 0.5rem;
+            outline:none;
+            border: none;
+            background-color: red;
+            color: white;
+            border-radius: 0.5rem;
+            
+        }
+        p{
+            line-height: 3rem;
+        }
+        @media screen and (max-width: 1000px) {
+            .card{
+                width: 30%;
+
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .card{
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+        <div class="card">
+            <center>
+                <h2>THE STARTWARS</h2>
+                <P id="name">Name:</P>
+                <p id = "height">Height:</p>
+                <p id = "mass">mass:</p>
+                <br>
+                <button id="btn">Generate</button>
+            </center>
+        </div>
+   </div>
+
+
+
+    <script>
+        
+        document.getElementById('btn').addEventListener("click", function(){
+            const randomNumber = Math.floor((Math.random() * 10) + 1)
+            game(randomNumber)
+
+        const name = document.getElementById('name')
+        const color = document.getElementById('color')
+        const height = document.getElementById('height')
+        const mass = document.getElementById('mass')
+
+        function game(number){
+            fetch(`https://swapi.dev/api/people/${number}/`)
+            .then(response => response.json())
+            .then(data =>{
+                // console.log(data)
+               
+                name.textContent = `Name : ${data.name}`
+                height.textContent = `Height : ${data.height}cm`
+                mass.textContent = `Mass : ${data.mass}`
+                
+            })
+        }
+        })
+
+        
+    </script>
+</body>
+</html>
