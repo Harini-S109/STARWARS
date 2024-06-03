@@ -1,4 +1,4 @@
-# STARWARS RANDOM CHARACTER GENERATOR
+#  RANDOM STARWARS CHARACTER GENERATOR
 This project involves creating application which generates random Starwars character.
 
 ## Table of contents
@@ -11,7 +11,7 @@ This project involves creating application which generates random Starwars chara
 
 ### Links
 
-- Live Site URL: (https://harini-s109.github.io/To-Do-list/)
+- Live Site URL: (https://harini-s109.github.io/STARWARS/)
 
 
 ### Built with
